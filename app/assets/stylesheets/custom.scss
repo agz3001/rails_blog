@@ -1,0 +1,15 @@
+img{width:300px; height:300px;}
+
+.footer-list li{padding-bottom:10px;}
+
+.relative{
+  position: relative;
+  i{
+    position: absolute;
+    top: -1000%;
+    left:10%;
+    color:white;
+    font-size:40px;
+  }
+}
+#file{display:none;}

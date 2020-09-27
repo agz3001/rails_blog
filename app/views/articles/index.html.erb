@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+  <% @article.each do |a| %>
+    <%= link_to a do %>
+    <div class="col-md-4">
+      <% if a.image_id.present? %>
+        <%= image_tag attachment_url(a, :image), class:"img-responsive-top-15" %>
+      <% else %>
+        <%= image_tag "book1.jpg" %>
+      <% end %>
+      <p><%= a.title %></p>
+      <%= a.created_at.strftime("%Y/%m/%d") %>
+    </div>
+    <% end %>
+  <% end %><!--<div class="col-md-4">の外で始まるから、その外で終わるべき-->
+  </div>
+  <%= link_to "新規作成", new_article_path,  class:"btn btn-primary", style:"margin-bottom:10px; margin-top:10px;"  %>
+  <%= paginate @article %>
+</div>

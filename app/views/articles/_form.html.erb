@@ -1,0 +1,17 @@
+<%= javascript_include_tag 'application' %>
+<%= form_for(@article) do |f| %>
+  <div id="cover-photo" class="relative">
+    <%= f.attachment_field :image %>
+    <i class="fa fa-camera"></i>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+  <div>
+    <%= f.label :body, "投稿本文" %>
+    <%= f.text_area :body, rows:10, class:"form-control" %>
+  </div>
+  <%= f.submit class:"btn btn-success" %>
+<% end %>

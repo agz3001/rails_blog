@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <% if @article.image_id.present? %>
+      <%= image_tag attachment_url(@article, :image), class:"article-image padding-15" %>
+    <% end %>
+    <div class="col-md-4">
+      <p><%= @article.title %></p>
+      <%= @article.created_at.strftime("%Y/%m/%d") %>
+      <p><%= simple_format @article.body %></p>
+    </div>
+    <%= link_to "編集", edit_article_path(@article), class:"btn btn-primary",
+     style:"margin-bottom:10px;" %>
+    <%= link_to "削除", article_path(@article), method: :delete,
+    data:{confirm:"削除する?"}, class:"btn btn-danger",
+    style:"margin-bottom:10px; margin-right:10px;" %>
+  </div>
+</div>
